@@ -9,6 +9,14 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func TestMain(m *testing.M)  {
+	//before
+	fmt.Println("Sebelum Unit Test")
+	m.Run()
+	//after
+	fmt.Println("Sesudah Unit Test")
+}
+
 func TestSkip(t *testing.T)  {
 	if runtime.GOOS == "windows" {
 		t.Skip("Can't run on windows")

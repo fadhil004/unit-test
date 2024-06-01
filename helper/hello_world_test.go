@@ -68,3 +68,29 @@ func TestHelloWorldFaraz(t *testing.T)  {
 
 	fmt.Println("TestHelloWorldFaraz Done")
 }
+
+func TestHelloWorldTable(t *testing.T)  {
+	test := []struct {
+		name string
+		request string
+		expected string
+	}{
+		{
+			name: "HelloWorld(Fadhil)",
+			request:  "Fadhil",
+			expected: "Hello Fadhil",
+		},
+		{
+			name: "HelloWorld(Farraz)",
+			request: "Farraz",
+			expected: "Hello Farraz",
+		},
+	}
+
+	for _, test := range test {
+		t.Run(test.name, func(t *testing.T)  {
+			result := HelloWorld(test.request)
+			assert.Equal(t, test.expected, result)
+		})
+	}
+}

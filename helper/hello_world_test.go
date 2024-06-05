@@ -21,6 +21,19 @@ func BenchmarkHelloWolrdFarraz(b *testing.B)  {
 	}
 }
 
+func BenchmarkHelloWolrdSub(b *testing.B)  {
+	b.Run("Fadhil", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Fadhil")
+		}
+	})
+	b.Run("Farraz", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			HelloWorld("Farraz")
+		}
+	})
+}
+
 func TestSubTest(t *testing.T)  {
 	t.Run("Fadhil", func(t *testing.T)  {
 		result := HelloWorld("Fadhil")
